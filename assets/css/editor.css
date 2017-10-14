@@ -1,0 +1,43 @@
+/**
+ * Note that these styles are loaded *after* common styles, so that
+ * editor-specific styles using the same selectors will take precedence.
+ */
+
+.wp-block-gbrp-related-posts .related-posts-title {
+	border-top: 1px solid;
+	display: inline-block;
+	padding-top: 10px;
+}
+
+.wp-block-gbrp-related-posts ul {
+	padding: 0 !important;
+	margin: 0 !important;
+	list-style: none !important;
+}
+
+.wp-block-gbrp-related-posts ul.is-grid {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.wp-block-gbrp-related-posts ul.is-grid li {
+	margin: 0 10px 20px 0;
+}
+
+.wp-block-gbrp-related-posts ul.is-grid.columns-2 li {
+	width: 48%;
+}
+
+.wp-block-gbrp-related-posts ul.is-grid.columns-3 li {
+	width: 30%;
+}
+
+.wp-block-gbrp-related-posts ul.is-list li {
+	padding-bottom: 10px;
+}
+
+.wp-block-gbrp-related-posts__post-date {
+	color: grey;
+	display: block;
+	font-size: 14px;
+}
