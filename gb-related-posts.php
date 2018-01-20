@@ -31,7 +31,7 @@ if ( ! defined( 'GBRP_URL' ) ) {
 }
 
 if ( ! function_exists( 'is_plugin_active' ) ) {
-	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+	include_once ABSPATH . 'wp-admin/includes/plugin.php';
 }
 
 if ( ! is_plugin_active( 'gutenberg/gutenberg.php' ) ) {
@@ -55,8 +55,6 @@ if ( ! is_plugin_active( 'gutenberg/gutenberg.php' ) ) {
 }
 
 // Load Related Posts Block.
-require_once( GBRP_DIR . '/classes/class-related-posts.php' );
-
-
+require_once GBRP_DIR . '/classes/class-related-posts.php';
 
 //EOF
