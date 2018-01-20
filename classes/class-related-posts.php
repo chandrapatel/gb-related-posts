@@ -86,7 +86,7 @@ class Related_Posts {
 	 *
 	 * @return bool|array
 	 */
-	protected function _gbrp_get_related_posts( $post_id, $num_of_posts = 3 ) {
+	protected function get_related_posts( $post_id, $num_of_posts = 3 ) {
 
 		if ( empty( $post_id ) ) {
 			return false;
@@ -108,7 +108,7 @@ class Related_Posts {
 
 		foreach ( $posts as $index => $post ) {
 
-			$posts[ $index ]->url = get_permalink( $post->ID );
+			$posts[ $index ]->url       = get_permalink( $post->ID );
 			$posts[ $index ]->thumbnail = get_the_post_thumbnail_url( $post->ID );
 
 		}
@@ -139,7 +139,7 @@ class Related_Posts {
 		$related_posts = [];
 
 		if ( ! empty( $args['post_id'] ) ) {
-			$related_posts = $this->_gbrp_get_related_posts( $args['post_id'], $args['num_of_posts'] );
+			$related_posts = $this->get_related_posts( $args['post_id'], $args['num_of_posts'] );
 		}
 
 		if ( ! empty( $related_posts ) && is_array( $related_posts ) ) {
@@ -159,7 +159,7 @@ class Related_Posts {
 
 		register_block_type(
 			'gbrp/related-posts', [
-				'attributes' => [
+				'attributes'      => [
 					'title'                => [
 						'type'    => 'string',
 						'default' => __( 'Related', 'gb-related-posts' ),
@@ -201,9 +201,9 @@ class Related_Posts {
 	 *
 	 * @return string Returns related posts content.
 	 */
-	function render_block( $attributes ) {
+	public function render_block( $attributes ) {
 
-		$related_posts = $this->_gbrp_get_related_posts( get_the_ID(), $attributes['postsToShow'] );
+		$related_posts = $this->get_related_posts( get_the_ID(), $attributes['postsToShow'] );
 
 		$list_items_markup = '';
 
@@ -219,10 +219,8 @@ class Related_Posts {
 					$list_items_markup .= sprintf(
 						'<img src="%s" />',
 						esc_url( $thumbnail )
-
 					);
 				}
-
 			}
 
 			$title = get_the_title( $post->ID );
