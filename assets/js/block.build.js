@@ -137,6 +137,8 @@ registerBlockType('gbrp/related-posts', {
 
 	keywords: [__('related posts')],
 
+	supportHTML: false,
+
 	attributes: {
 
 		title: {
