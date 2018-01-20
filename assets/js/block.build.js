@@ -129,6 +129,8 @@ registerBlockType('gbrp/related-posts', {
 
 	title: __('Related Posts'),
 
+	description: __('Shows a list of related posts.'),
+
 	icon: 'list-view',
 
 	category: 'widgets',
@@ -300,15 +302,6 @@ registerBlockType('gbrp/related-posts', {
 				), focus && wp.element.createElement(
 					InspectorControls,
 					{ key: 'inspector' },
-					wp.element.createElement(
-						BlockDescription,
-						null,
-						wp.element.createElement(
-							'p',
-							null,
-							__('Shows a list of related posts.')
-						)
-					),
 					wp.element.createElement(
 						'h3',
 						null,

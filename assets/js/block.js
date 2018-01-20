@@ -37,6 +37,8 @@ registerBlockType( 'gbrp/related-posts', {
 
 	title: __( 'Related Posts' ),
 
+	description: __( 'Shows a list of related posts.' ),
+
 	icon: 'list-view',
 
 	category: 'widgets',
@@ -183,9 +185,6 @@ registerBlockType( 'gbrp/related-posts', {
 
 				focus && (
 					<InspectorControls key="inspector">
-						<BlockDescription>
-							<p>{ __( 'Shows a list of related posts.' ) }</p>
-						</BlockDescription>
 						<h3>{ __( 'Related Posts Settings' ) }</h3>
 						<TextControl
 							label={ __( 'Title' ) }
