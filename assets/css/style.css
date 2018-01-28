@@ -3,10 +3,16 @@
  * editor-specific styles using the same selectors will take precedence.
  */
 
+.wp-block-gbrp-related-posts {
+	margin: 1.5em auto;
+	max-width: 740px;
+}
+
 .wp-block-gbrp-related-posts .related-posts-title {
 	border-top: 1px solid;
 	display: inline-block;
 	padding-top: 10px;
+	margin-top: 10px;
 }
 
 .wp-block-gbrp-related-posts ul {
@@ -16,21 +22,43 @@
 }
 
 .wp-block-gbrp-related-posts ul.is-grid {
+	display: grid;
+	grid-column-gap: 1rem;
+	grid-row-gap: 1rem;
+}
+
+.wp-block-gbrp-related-posts ul.is-grid.columns-2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.wp-block-gbrp-related-posts ul.is-grid.columns-3 {
+	grid-template-columns: repeat(3, 1fr);	
+}
+
+/*.wp-block-gbrp-related-posts ul.is-grid {
 	display: flex;
 	flex-wrap: wrap;
 }
 
 .wp-block-gbrp-related-posts ul.is-grid li {
-	margin: 0 10px 20px 0;
+	margin: 0 15px 0px 0;
+}
+
+.wp-block-gbrp-related-posts ul.is-grid li:last-child {
+	margin-right: 0;
 }
 
 .wp-block-gbrp-related-posts ul.is-grid.columns-2 li {
-	width: 48%;
+	width: calc( ( 100%/2 ) - 10px )
 }
 
 .wp-block-gbrp-related-posts ul.is-grid.columns-3 li {
-	width: 30%;
-}
+	width: calc( ( 100%/3 ) - 10px )
+}*/
+
+/*.wp-block-gbrp-related-posts img {
+	height: 140px;
+}*/
 
 .wp-block-gbrp-related-posts ul.is-list li {
 	padding-bottom: 10px;
@@ -40,4 +68,46 @@
 	color: grey;
 	display: block;
 	font-size: 14px;
+}
+
+/* 
+##Device = Low Resolution Tablets, Mobiles (Landscape)
+##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+
+	.wp-block-gbrp-related-posts ul.is-grid.columns-2,
+	.wp-block-gbrp-related-posts ul.is-grid.columns-3 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+    /*.wp-block-gbrp-related-posts ul.is-grid.columns-3 li {
+		width: calc( ( 100%/2 ) - 10px )
+	}
+
+	.wp-block-gbrp-related-posts img {
+		height: auto;
+	}*/
+
+}
+
+/* 
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+
+	.wp-block-gbrp-related-posts ul.is-grid.columns-2,
+	.wp-block-gbrp-related-posts ul.is-grid.columns-3 {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	/*.wp-block-gbrp-related-posts img {
+		height: auto;
+	}
+
+	.wp-block-gbrp-related-posts ul.is-grid.columns-3 li, .wp-block-gbrp-related-posts ul.is-grid.columns-2 li {
+		width: auto;
+	}*/
+
 }

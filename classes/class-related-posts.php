@@ -55,7 +55,7 @@ class Related_Posts {
 			'gbrp-editor-style',
 			plugins_url( 'assets/css/editor.css', __DIR__ ),
 			[ 'wp-edit-blocks' ],
-			filemtime( plugin_dir_path( __DIR__ ) . 'assets/css/editor.css' )
+			filemtime( plugin_dir_path( __DIR__ ) . 'assets/css/style.css' )
 		);
 
 	}
